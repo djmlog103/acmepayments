@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>ACME Customer Payments</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>Form</h1>
+<form action="#" th:action="@{/makePayment}" th:object="${payment}" method="post">
+  <p>Email: <input type="text" th:field="*{email}"/> <b th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Error</b></p>
+  <p>Amount: <input type="text" th:field="*{amount}"/> <b th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}">Error</b></p>
+  <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+</form>
+
+<h1>All payments</h1>
+<table>
+  <tr>
+    <th>Payment Id</th>
+    <th>Invoice Id</th>
+    <th>Email</th>
+    <th>Amount</th>
+  </tr>
+  <tr th:each="payment: ${payments}">
+    <td th:text="${payment.id}"/>
+    <td th:text="${payment.invoiceId}"/>
+    <td th:text="${payment.email}"/>
+    <td th:text="${payment.amount}"/>
+  </tr>
+</table>
+</body>
+</html>
