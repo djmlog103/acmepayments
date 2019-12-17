@@ -1,4 +1,4 @@
-#Welcome to ACME Payments
+# Welcome to ACME Payments
 ACME payments provides a convenient way to pay for ACME goods and services.
  
  ## Your payments are secure with us
