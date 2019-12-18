@@ -5,6 +5,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
+<a href="/">Payments</a>
+<a href="/invoices">Invoices</a>
 <h1>Form</h1>
 <form action="#" th:action="@{/makePayment}" th:object="${payment}" method="post">
   <p>Email: <input type="text" th:field="*{email}"/> <b th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Error</b></p>

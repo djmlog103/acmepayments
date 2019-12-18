@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>ACME Invoices</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<a href="/">Payments</a>
+<a href="/invoices">Invoices</a>
+
+<h1>All invoices</h1>
+
+<table>
+  <tr>
+    <th>Invoice Id</th>
+    <th>Email</th>
+    <th>description</th>
+  </tr>
+  <tr th:each="invoice: ${invoices}">
+    <td th:text="${invoice.id}"/>
+    <td th:text="${invoice.email}"/>
+    <td th:text="${invoice.description}"/>
+  </tr>
+</table>
+</body>
+</html>
